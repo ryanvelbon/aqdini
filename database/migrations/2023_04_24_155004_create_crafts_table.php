@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('icon')->nullable();
             $table->string('synonyms')->nullable();
+            $table->unsignedTinyInteger('priority')->default(1);
         });
     }
 
