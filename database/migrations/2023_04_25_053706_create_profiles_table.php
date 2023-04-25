@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('facebook')->nullable();
             $table->string('phone', 8)->nullable();
             $table->timestamps();
+            $table->softDeletes();
 
             $table->foreign('locality_id')->references('id')->on('localities')->onDelete('SET NULL')->nullable();
             $table->foreign('craft_id')->references('id')->on('crafts')->onDelete('SET NULL')->nullable();
