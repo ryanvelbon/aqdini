@@ -11,6 +11,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LocalitiesTableSeeder::class,
             CraftsTableSeeder::class,
+            
+            ProfilesTableSeeder::class,
         ]);
     }
 }
