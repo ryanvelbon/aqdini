@@ -14,6 +14,7 @@ class Craft extends Model
         'icon',
         'synonyms',
         'priority',
+        'img',
     ];
 
     public function profiles(): HasMany

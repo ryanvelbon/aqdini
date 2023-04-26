@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('icon')->nullable();
             $table->string('synonyms')->nullable();
             $table->unsignedTinyInteger('priority')->default(1);
+            $table->string('img')->nullable();
         });
     }
 
