@@ -2,11 +2,17 @@
 
 @section('content')
 <section class="bg-orange-200">
+  <div class="pt-16">
+    <div class="container mx-auto">
+      <h1 class="text-white font-bold text-4xl mb-6">Find the right person for the job</h1>
+      <h2 class="text-white font-medium text-lg mb-12">Search for services in your area</h2>
+    </div>
+  </div>
   <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
     <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
     <div class="mx-auto max-w-3xl">
       <form>
-        <div class="bg-green-500 grid grid-cols-1 md:grid-cols-3 p-4 gap-y-2 gap-x-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 p-4 gap-y-2 gap-x-2">
           <x-dropdown name="craft" :options="$crafts" />
           <x-dropdown name="locality" :options="$localities" />
           <button class="bg-blue-200 p-2">Search</button>
@@ -15,25 +21,25 @@
     </div>
   </div>
 </section>
-<section class="bg-green-200">
+<section class="bg-blue-100">
   <div class="flex flex-wrap justify-center py-12 gap-4">
     @foreach ($craftsA as $craft)
-      <div class="bg-gray-200">
-        <h2 class="text-xl font-bold">{{ $craft->name }}</h2>
+      <div class="craft-card h-80 w-40">
+        <h3 class="text-xl font-bold">{{ $craft->name }}</h3>
       </div>
     @endforeach
   </div>
   <div class="flex flex-wrap justify-center py-12 gap-4">
     @foreach ($craftsB as $craft)
-      <div class="bg-gray-200">
-        <h2 class="text-md font-bold">{{ $craft->name }}</h2>
+      <div class="craft-card w-32 h-32">
+        <h3 class="text-sm">{{ $craft->name }}</h3>
       </div>
     @endforeach
   </div>
   <div class="flex flex-wrap justify-center py-12 gap-4">
     @foreach ($craftsC as $craft)
-      <div class="bg-gray-200">
-        <h2 class="text-sm">{{ $craft->name }}</h2>
+      <div class="craft-card w-24 h-24 ">
+        <h3 class="text-xs">{{ $craft->name }}</h3>
       </div>
     @endforeach
   </div>

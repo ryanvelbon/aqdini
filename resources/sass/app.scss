@@ -53,3 +53,11 @@
 [x-cloak] {
     display: none;
 }
+
+.craft-card {
+   @apply bg-white rounded-lg flex items-center justify-center shadow-md hover:shadow-xl transform hover:-translate-y-2 transition-all duration-500;
+
+   h3 {
+      @apply text-center text-gray-700;
+   }
+}
