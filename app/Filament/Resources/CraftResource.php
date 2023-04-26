@@ -17,6 +17,8 @@ class CraftResource extends Resource
 {
     protected static ?string $model = Craft::class;
 
+    protected static ?string $navigationGroup = 'Reference Data';
+
     protected static ?string $navigationIcon = 'heroicon-o-collection';
 
     public static function form(Form $form): Form

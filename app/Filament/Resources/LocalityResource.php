@@ -17,7 +17,9 @@ class LocalityResource extends Resource
 {
     protected static ?string $model = Locality::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationGroup = 'Reference Data';
+
+    protected static ?string $navigationIcon = 'heroicon-o-map';
 
     public static function form(Form $form): Form
     {
