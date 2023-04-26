@@ -7,4 +7,5 @@
         {{ $slot }}
     @endisset
     @include('partials.footer')
+    @yield('scripts')
 @endsection
