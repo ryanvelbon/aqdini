@@ -16,6 +16,7 @@ class CraftsTableSeeder extends Seeder
         $crafts = [
             [
                 'name' => 'Babysitter',
+                'slug' => 'babysitter',
                 'icon' => 'baby-carriage',
                 'synonyms' => 'Au pair, nanny',
                 'priority' => 2,
@@ -23,6 +24,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Barber',
+                'slug' => 'barber',
                 'icon' => 'scissors',
                 'synonyms' => '',
                 'priority' => 1,
@@ -30,6 +32,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Beautician',
+                'slug' => 'beautician',
                 'icon' => 'paintbrush-fine',
                 'synonyms' => '',
                 'priority' => 1,
@@ -37,6 +40,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Carpenter',
+                'slug' => 'carpenter',
                 'icon' => 'hammer',
                 'synonyms' => '',
                 'priority' => 2,
@@ -44,6 +48,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Carpet cleaner',
+                'slug' => 'carpet-cleaner',
                 'icon' => 'rug',
                 'synonyms' => '',
                 'priority' => 1,
@@ -51,6 +56,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Electrician',
+                'slug' => 'electrician',
                 'icon' => 'lightbulb',
                 'synonyms' => '',
                 'priority' => 3,
@@ -58,6 +64,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Gardener',
+                'slug' => 'gardener',
                 'icon' => 'trowel',
                 'synonyms' => '',
                 'priority' => 3,
@@ -65,6 +72,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Glass repair technician',
+                'slug' => 'glass-repair-technician',
                 'icon' => 'wine-glass-crack',
                 'synonyms' => '',
                 'priority' => 1,
@@ -72,6 +80,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Glazier',
+                'slug' => 'glazier',
                 'icon' => 'window-frame',
                 'synonyms' => '',
                 'priority' => 1,
@@ -79,6 +88,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Hairdresser',
+                'slug' => 'hairdresser',
                 'icon' => 'scissors',
                 'synonyms' => '',
                 'priority' => 1,
@@ -86,6 +96,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Handyman',
+                'slug' => 'handyman',
                 'icon' => 'screwdriver',
                 'synonyms' => '',
                 'priority' => 1,
@@ -93,6 +104,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'HVAC technician',
+                'slug' => 'hvac-technician',
                 'icon' => 'air-conditioner',
                 'synonyms' => '',
                 'priority' => 1,
@@ -100,6 +112,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Ironworker',
+                'slug' => 'ironworker',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 1,
@@ -107,6 +120,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Jewelry maker',
+                'slug' => 'jewelry-maker',
                 'icon' => 'rings-wedding',
                 'synonyms' => '',
                 'priority' => 1,
@@ -114,6 +128,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Landscaper',
+                'slug' => 'landscaper',
                 'icon' => 'trowel',
                 'synonyms' => '',
                 'priority' => 1,
@@ -121,6 +136,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Locksmith',
+                'slug' => 'locksmith',
                 'icon' => 'key-skeleton-left-right',
                 'synonyms' => '',
                 'priority' => 2,
@@ -128,6 +144,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Maid',
+                'slug' => 'maid',
                 'icon' => 'broom',
                 'synonyms' => 'cleaner, housekeeper',
                 'priority' => 3,
@@ -135,6 +152,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Makeup artist',
+                'slug' => 'makeup-artist',
                 'icon' => 'paintbrush-fine',
                 'synonyms' => '',
                 'priority' => 1,
@@ -142,6 +160,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Massage therapist',
+                'slug' => 'massage-therapist',
                 'icon' => 'spa',
                 'synonyms' => '',
                 'priority' => 2,
@@ -149,6 +168,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Mechanic',
+                'slug' => 'mechanic',
                 'icon' => 'car-wrench',
                 'synonyms' => '',
                 'priority' => 3,
@@ -156,6 +176,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Painter',
+                'slug' => 'painter',
                 'icon' => 'paint-roller',
                 'synonyms' => '',
                 'priority' => 3,
@@ -163,6 +184,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Pest control specialist',
+                'slug' => 'pest-control-specialist',
                 'icon' => 'ban-bug',
                 'synonyms' => '',
                 'priority' => 1,
@@ -170,6 +192,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Plasterer',
+                'slug' => 'plasterer',
                 'icon' => 'trowel',
                 'synonyms' => '',
                 'priority' => 2,
@@ -177,6 +200,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Plumber',
+                'slug' => 'plumber',
                 'icon' => 'toilet',
                 'synonyms' => '',
                 'priority' => 3,
@@ -184,6 +208,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Pool cleaner',
+                'slug' => 'pool-cleaner',
                 'icon' => 'water-ladder',
                 'synonyms' => '',
                 'priority' => 2,
@@ -191,6 +216,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Potter',
+                'slug' => 'potter',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 1,
@@ -198,6 +224,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Roofer',
+                'slug' => 'roofer',
                 'icon' => '',
                 'synonyms' => 'xogħol ta\' membrane ',
                 'priority' => 1,
@@ -205,6 +232,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Sheet metal worker',
+                'slug' => 'sheet-metal-worker',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 1,
@@ -212,6 +240,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Skin care specialist',
+                'slug' => 'skin-care-specialist',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 1,
@@ -219,6 +248,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Speech therapist',
+                'slug' => 'speech-therapist',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 1,
@@ -226,6 +256,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Textile artist',
+                'slug' => 'textile-artist',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 1,
@@ -233,6 +264,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Tile installer',
+                'slug' => 'tile-installer',
                 'icon' => 'grid-2',
                 'synonyms' => '',
                 'priority' => 2,
@@ -240,6 +272,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Upholsterer',
+                'slug' => 'upholsterer',
                 'icon' => 'couch',
                 'synonyms' => '',
                 'priority' => 2,
@@ -247,6 +280,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Welder',
+                'slug' => 'welder',
                 'icon' => '',
                 'synonyms' => '',
                 'priority' => 2,
@@ -254,6 +288,7 @@ class CraftsTableSeeder extends Seeder
             ],
             [
                 'name' => 'Window cleaner',
+                'slug' => 'window-cleaner',
                 'icon' => 'blinds-open',
                 'synonyms' => '',
                 'priority' => 1,

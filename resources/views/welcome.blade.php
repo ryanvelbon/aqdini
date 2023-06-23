@@ -14,7 +14,7 @@
   <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
     <!-- We've used 3xl here, but feel free to try other max-widths based on your needs -->
     <div class="mx-auto max-w-3xl">
-      <form action="{{ route('profiles.index') }}" method="GET">
+      <form action="{{ route('profiles.search') }}" method="GET">
         <div class="grid grid-cols-1 md:grid-cols-3 md:pb-8 p-4 gap-y-2 gap-x-2">
           <x-dropdown name="craft" :options="$crafts" />
           <x-dropdown name="locality" :options="$localities" />

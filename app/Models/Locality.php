@@ -10,6 +10,7 @@ class Locality extends Model
 
     protected $fillable = [
         'name',
+        'slug',
         'latitude',
         'longitude'
     ];

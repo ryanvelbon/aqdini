@@ -57,4 +57,8 @@ Route::middleware('auth')->group(function () {
         ->name('logout');
 });
 
-Route::get('profiles', [ProfilesController::class, 'index'])->name('profiles.index');
+// Matches "search/plumber/berlin"
+Route::get('search/{craft}/{locality}', [ProfilesController::class, 'index'])->name('profiles.index');
+
+// Matches "search?craft=plumber&locality=berlin" and "search?craft=1&locality=1"
+Route::get('search', [ProfilesController::class, 'index'])->name('profiles.search');

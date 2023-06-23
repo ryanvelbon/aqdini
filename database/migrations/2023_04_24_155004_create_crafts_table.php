@@ -10,7 +10,8 @@ return new class extends Migration
     {
         Schema::create('crafts', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->unique();
+            $table->string('slug')->unique();
             $table->string('icon')->nullable();
             $table->string('synonyms')->nullable();
             $table->unsignedTinyInteger('priority')->default(1);

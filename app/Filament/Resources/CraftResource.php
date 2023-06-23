@@ -40,6 +40,7 @@ class CraftResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name'),
+                Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('icon'),
                 Tables\Columns\TextColumn::make('profiles_count')->counts('profiles'),
                 Tables\Columns\TextColumn::make('synonyms'),
