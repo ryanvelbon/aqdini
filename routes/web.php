@@ -10,6 +10,7 @@ use App\Http\Livewire\Auth\Passwords\Email;
 use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
+use App\Http\Livewire\Profile\Edit;
 use App\Http\Livewire\Profile\Setup;
 use Illuminate\Support\Facades\Route;
 
@@ -57,6 +58,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('profile-setup', Setup::class)
         ->name('profile.setup');
+
+    Route::get('profile/edit', Edit::class)
+        ->name('profile.edit');
 });
 
 // Matches "search/plumber/berlin"
