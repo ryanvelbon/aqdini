@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Profile;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 
@@ -14,6 +15,10 @@ class Setup extends Component
     {
         $this->validate([
             'accountType' => ['required', Rule::in(['contractor', 'client'])],
+        ]);
+
+        Auth::user()->update([
+            'account_type' => $this->accountType,
         ]);
 
         if ($this->accountType === 'contractor') {

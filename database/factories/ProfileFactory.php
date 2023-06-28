@@ -15,7 +15,7 @@ class ProfileFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => User::factory(),
+            'user_id' => User::factory(['account_type' => 'contractor']),
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
             'bio' => $this->faker->paragraph,
