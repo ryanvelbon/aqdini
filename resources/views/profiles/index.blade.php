@@ -4,9 +4,15 @@
 <div class="py-12 flex justify-center">
     <h2 class="text-4xl text-gray-800 font-bold">{{ $craft->name }}s in {{ $locality->name }}</h2>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="mx-auto sm:px-6 lg:px-8">
+<div class="bg-gray-200 p-6 mb-2">
+    <h4 class="text-xl font-bold">Ad Space for Rent</h4>
+    <p class="text-gray-700">Advertise with us!</p>
+</div>
+<div class="lg:flex gap-x-2">
+<div class="grow flex flex-wrap gap-6">
     @foreach($profiles as $profile)
-        <div class="overflow-hidden shadow-lg rounded-lg h-90 w-60 md:w-80 cursor-pointer m-auto">
+        <div class="grow overflow-hidden shadow-lg rounded-lg  cursor-pointer m-auto">
             <a href="/profiles/{{ $profile->id }}" class="w-full block h-full">
                 <img alt="profile image" src="{{ $profile->profile_pic }}" class="max-h-40 w-full object-cover"/>
                 <div class="bg-white dark:bg-gray-800 w-full p-4">
@@ -32,6 +38,12 @@
             </a>
         </div>
     @endforeach
+</div>
+<div class="lg:w-96 mt-6 lg:mt-0 bg-gray-200 p-6">
+    <h4 class="text-xl font-bold">Ad Space for Rent</h4>
+    <p class="text-gray-700">Advertise with us!</p>
+</div>
+</div>
 </div>
 
 @endsection
