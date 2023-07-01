@@ -1,5 +1,5 @@
-<header x-data="{ open: false }" class="bg-white">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8" aria-label="Global">
+<header x-data="{ open: false }" class="bg-blue-200">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-2 lg:px-8" aria-label="Global">
     <div class="flex lg:flex-1">
       <a href="{{ route('home') }}" class="-m-1.5 p-1.5">
         <span class="sr-only">Your Company</span>
@@ -7,10 +7,7 @@
       </a>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Product</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Features</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Marketplace</a>
-      <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Company</a>
+      @livewire('search-crafts')
     </div>
     <div class="flex flex-1 items-center justify-end gap-x-6">
       @if (Route::has('login'))
