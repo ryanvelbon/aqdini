@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 md:grid-cols-2">
+<div x-data="{ selectedCraft: '', selectedLocality: '' }" class="flex gap-x-2">
 
     <div>
         <label for="craftCombobox" class="block text-sm font-medium leading-6 text-gray-900">X'għandek bżonn?</label>
@@ -28,6 +28,10 @@
                 @foreach($crafts as $craft)
                 <li
                     x-data="{ highlighted: false }"
+                    x-on:click="
+                        selectedCraft = '{{ $craft->id }}';
+                        $wire.set('craftSearch', '{{ $craft->name }}');
+                    "
                     x-on:mouseenter="highlighted = true"
                     x-on:mouseleave="highlighted = false"
                     x-bind:class="{ 'bg-gray-200': highlighted }"
@@ -56,5 +60,13 @@
                 <li>{{ $locality->name }}</li>
             @endforeach
         </ul>
+    </div>
+
+    <div>
+        <form action="{{ route('profiles.search') }}" method="GET">
+            <input type="hidden" name="craft" x-bind:value="selectedCraft">
+            <input type="hidden" name="locality" x-bind:value="selectedLocality">
+            <button class="bg-blue-600 text-white h-full p-4 rounded-xl" type="submit">Search</button>
+        </form>
     </div>
 </div>

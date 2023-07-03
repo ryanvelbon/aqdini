@@ -6,7 +6,7 @@
         <x-logo class="w-auto h-8 text-indigo-600" />
       </a>
     </div>
-    <div class="hidden lg:flex lg:gap-x-12">
+    <div class="hidden sm:block">
       @livewire('search')
     </div>
     <div class="flex flex-1 items-center justify-end gap-x-6">
