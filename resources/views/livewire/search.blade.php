@@ -21,25 +21,28 @@
 
             @if($crafts->count() > 0)
             <ul class="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm" id="options" role="listbox">
+
                 <!--
-                    Combobox option, manage highlight styles based on mouseenter/mouseleave and keyboard navigation.
-
-                    Active: "text-white bg-indigo-600", Not Active: "text-gray-900"
+                    *PENDING*: Combobox option, manage highlight styles based on keyboard navigation
                 -->
-
                 @foreach($crafts as $craft)
-                <li class="relative cursor-default select-none py-2 pl-3 pr-9 text-gray-900" role="option" tabindex="-1">
+                <li
+                    x-data="{ highlighted: false }"
+                    x-on:mouseenter="highlighted = true"
+                    x-on:mouseleave="highlighted = false"
+                    x-bind:class="{ 'bg-gray-200': highlighted }"
+                    class="relative cursor-default select-none py-2 pl-3 pr-9"
+                    role="option"
+                    tabindex="-1"
+                >
                     <div class="flex">
-                        <!-- Selected: "font-semibold" -->
                         <span class="truncate">{{ $craft->name }}</span>
-                        <!-- Active: "text-indigo-200", Not Active: "text-gray-500" -->
                         @if($craft->synonyms)
                             <span class="ml-2 truncate text-gray-500">{{ $craft->synonyms }}</span>
                         @endif
                     </div>
                 </li>
                 @endforeach
-
             </ul>
             @endif
         </div>
