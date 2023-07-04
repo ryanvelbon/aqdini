@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Craft;
 use App\Models\Locality;
 use App\Models\Profile;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
@@ -48,6 +49,19 @@ class ProfilesController extends Controller
             'craft' => $craftModel,
             'locality' => $localityModel,
             'profiles' => $profiles
+        ]);
+    }
+
+    public function show($username)
+    {
+        $profile = User::where('username', $username)->firstOrFail()->profile;
+
+        if ($profile->user->account_type !== 'contractor') {
+            return abort(404);
+        }
+
+        return view('profiles.show', [
+            'profile' => $profile,
         ]);
     }
 }

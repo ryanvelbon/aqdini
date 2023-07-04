@@ -68,3 +68,5 @@ Route::get('search/{craft}/{locality}', [ProfilesController::class, 'index'])->n
 
 // Matches "search?craft=plumber&locality=berlin" and "search?craft=1&locality=1"
 Route::get('search', [ProfilesController::class, 'index'])->name('profiles.search');
+
+Route::get('@{username}', [ProfilesController::class, 'show'])->name('profiles.show');

@@ -13,7 +13,7 @@
         <div class="grow flex flex-wrap gap-6">
             @foreach($profiles as $profile)
                 <div class="grow overflow-hidden shadow-lg rounded-lg  cursor-pointer m-auto">
-                    <a href="/profiles/{{ $profile->id }}" class="w-full block h-full">
+                    <a href="{{ route('profiles.show', ['username' => $profile->user->username]) }}" class="w-full block h-full">
                         <img alt="profile image" src="{{ $profile->profile_pic }}" class="max-h-40 w-full object-cover"/>
                         <div class="bg-white dark:bg-gray-800 w-full p-4">
                             <p class="text-gray-800 dark:text-white text-xl font-medium mb-2">
