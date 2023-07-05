@@ -1,31 +1,34 @@
+<form action="{{ route('profiles.search') }}" method="GET">
 <div
     x-data="{
         selectedCraft: '',
         selectedLocality: '',
         showCraftOptions: false,
     }"
-    class="flex gap-x-2"
+    class="flex bg-test-5 w-full h-12"
 >
 
-    <div>
-        <label for="craftCombobox" class="block text-sm font-medium leading-6 text-gray-900">X'għandek bżonn?</label>
-        <div class="relative mt-2" @click.away="showCraftOptions = false">
+    <div class="px-5 bg-test-6 h-full flex items-center">
+        <i class="fa-solid fa-location-dot fa-lg mr-1"></i>
+        <span>Mellieha</span>
+    </div>
+
+    <div class="bg-test-1 grow h-full">
+        <div class="relative h-full" @click.away="showCraftOptions = false">
             <input
                 wire:model="craftSearch"
                 id="craftCombobox"
                 type="text"
-                placeholder="plumber, electrician, ..."
+                placeholder="What service do you need today?"
                 x-on:focus="showCraftOptions = true"
-                class="w-full rounded-md border-0 bg-white py-1.5 pl-3 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                class="w-full h-full text-sm lg:text-base border-0"
                 role="combobox"
                 aria-controls="options"
                 aria-expanded="false"
+                autocomplete="off"
+                spellcheck="false"
+                required
             >
-            <button type="button" class="absolute inset-y-0 right-0 flex items-center rounded-r-md px-2 focus:outline-none">
-                <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z" clip-rule="evenodd" />
-                </svg>
-            </button>
 
             @if($crafts->count() > 0)
             <ul
@@ -66,21 +69,12 @@
         </div>
     </div>
 
-    <div>
-        <label for="localityCombobox" class="block text-sm font-medium leading-6 text-gray-900">Where?</label>
-        <input wire:model="localitySearch" id="localityCombobox" type="text" placeholder="Where?"/>
-        <ul>
-            @foreach($localities as $locality)
-                <li>{{ $locality->name }}</li>
-            @endforeach
-        </ul>
-    </div>
+    <!-- hidden fields -->
+    <input type="hidden" name="craft" x-bind:value="selectedCraft">
+    <input type="hidden" name="locality" x-bind:value="selectedLocality">
 
-    <div>
-        <form action="{{ route('profiles.search') }}" method="GET">
-            <input type="hidden" name="craft" x-bind:value="selectedCraft">
-            <input type="hidden" name="locality" x-bind:value="selectedLocality">
-            <button class="bg-blue-600 text-white h-full p-4 rounded-xl" type="submit">Search</button>
-        </form>
-    </div>
+    <button class="bg-blue-600 px-4 text-white h-full" type="submit">
+        <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+    </button>
 </div>
+</form>
