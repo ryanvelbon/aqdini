@@ -6,7 +6,7 @@
         showCraftOptions: false,
         showLocalityOptions: false,
     }"
-    class="flex bg-test-5 w-full h-12"
+    class="relative flex bg-test-5 w-full h-12"
 >
 
     <div
@@ -24,11 +24,14 @@
     </div>
 
     <input
+        wire:model="localitySearch"
         id="localityInput"
         x-show="showLocalityOptions"
         x-on:blur="showLocalityOptions = false"
         type="text"
         class="w-48"
+        autocomplete="off"
+        spellcheck="false"
     />
 
     <div class="bg-test-1 grow h-full">
@@ -94,5 +97,32 @@
     <button class="bg-blue-600 px-4 text-white h-full" type="submit">
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
     </button>
+
+    @if($localities->count() > 0)
+    <ul
+        x-show="showLocalityOptions"
+        class="absolute z-10 mt-12 w-72 rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+        role="listbox"
+    >
+        @foreach($localities as $locality)
+        <li
+            x-data="{ highlighted: false }"
+            x-on:click="
+                selectedLocality = '{{ $locality->id }}';
+                $wire.set('localitySearch', '{{ $locality->name }}');
+                showLocalityOptions = false;
+            "
+            x-on:mouseenter="highlighted = true"
+            x-on:mouseleave="highlighted = false"
+            x-bind:class="{ 'bg-gray-200': highlighted }"
+            class="relative cursor-default select-none py-2 pl-3 pr-9"
+            role="option"
+            tabindex="-1"
+        >
+            <span class="truncate">{{ $locality->name }}</span>
+        </li>
+        @endforeach
+    </ul>
+    @endif
 </div>
 </form>
