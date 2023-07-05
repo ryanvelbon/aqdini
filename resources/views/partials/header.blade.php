@@ -1,15 +1,21 @@
 <header x-data="{ open: false }" class="bg-blue-200">
   <nav class="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-2 lg:px-8" aria-label="Global">
-    <div class="flex lg:flex-1">
+
+    <!-- LEFT -->
+    <div class="flex">
       <a href="{{ route('home') }}" class="-m-1.5 p-1.5">
         <span class="sr-only">Your Company</span>
         <x-logo class="w-auto h-8 text-indigo-600" />
       </a>
     </div>
-    <div class="hidden sm:block grow">
+
+    <!-- CENTER -->
+    <div class="hidden sm:block grow max-w-2xl">
       @livewire('search')
     </div>
-    <div class="flex flex-1 items-center justify-end gap-x-6">
+
+    <!-- RIGHT -->
+    <div class="hidden lg:block">
       @if (Route::has('login'))
         @auth
           <form method="POST" action="{{ route('logout') }}">
@@ -18,7 +24,7 @@
               <button type="submit">Log Out</button>
           </form>
         @else
-          <a href="{{ route('login') }}" class="hidden lg:block lg:text-sm lg:font-semibold lg:leading-6 lg:text-gray-900">Log in</a>
+          <a href="{{ route('login') }}" class="text-sm font-semibold leading-6 text-gray-900 mr-4">Log in</a>
           @if (Route::has('register'))
             <a href="{{ route('register') }}" class="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600">Sign up</a>
           @endif
@@ -34,6 +40,9 @@
       </button>
     </div>
   </nav>
+  <div class="p-1 sm:hidden grow">
+    @livewire('search')
+  </div>
   <!-- Mobile menu, show/hide based on menu open state. -->
   <div x-show="open" class="lg:hidden" role="dialog" aria-modal="true">
     <!-- Background backdrop, show/hide based on slide-over state. -->
