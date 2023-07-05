@@ -54,14 +54,14 @@ class ProfilesController extends Controller
 
     public function show($username)
     {
-        $profile = User::where('username', $username)->firstOrFail()->profile;
+        $user = User::where('username', $username)->firstOrFail();
 
-        if ($profile->user->account_type !== 'contractor') {
+        if ($user->account_type !== 'contractor') {
             return abort(404);
         }
 
         return view('profiles.show', [
-            'profile' => $profile,
+            'user' => $user,
         ]);
     }
 }

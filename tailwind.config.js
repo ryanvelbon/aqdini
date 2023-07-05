@@ -28,7 +28,8 @@ module.exports = {
                 },
                 info: {
                     DEFAULT: '#F5FBEF',
-                }
+                },
+                test: { DEFAULT: '#eee', 1: '#fcc', 2: '#cfc', 3: '#ccf', 4: '#cff', 5: '#fcf', 6: '#ffc' }
             },
             fontFamily: {
                 sans: ['Inter var', ...defaultTheme.fontFamily.sans],
