@@ -4,14 +4,32 @@
         selectedCraft: '',
         selectedLocality: '',
         showCraftOptions: false,
+        showLocalityOptions: false,
     }"
     class="flex bg-test-5 w-full h-12"
 >
 
-    <div class="px-5 bg-test-6 h-full flex items-center">
+    <div
+        x-show="!showLocalityOptions"
+        x-on:click="
+            showLocalityOptions = true;
+            setTimeout(() => {
+                document.getElementById('localityInput').focus();
+            }, 50);
+        "
+        class="w-48 px-5 bg-test-6 h-full flex items-center justify-center"
+    >
         <i class="fa-solid fa-location-dot fa-lg mr-1"></i>
         <span>Mellieha</span>
     </div>
+
+    <input
+        id="localityInput"
+        x-show="showLocalityOptions"
+        x-on:blur="showLocalityOptions = false"
+        type="text"
+        class="w-48"
+    />
 
     <div class="bg-test-1 grow h-full">
         <div class="relative h-full" @click.away="showCraftOptions = false">
