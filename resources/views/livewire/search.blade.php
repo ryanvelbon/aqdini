@@ -9,31 +9,66 @@
     class="relative flex bg-test-5 w-full h-12"
 >
 
-    <div
-        x-show="!showLocalityOptions"
-        x-on:click="
-            showLocalityOptions = true;
-            setTimeout(() => {
-                document.getElementById('localityInput').focus();
-            }, 50);
-        "
-        class="w-48 px-5 bg-test-6 h-full flex items-center justify-center"
-    >
-        <i class="fa-solid fa-location-dot fa-lg mr-1"></i>
-        <span>Mellieha</span>
+    <!-- SELECT LOCALITY -->
+    <div class="bg-test-1 h-full">
+        <div class="relative h-full" @click.away="showLocalityOptions = false">
+
+            <div
+                x-show="!showLocalityOptions"
+                x-on:click="
+                    showLocalityOptions = true;
+                    setTimeout(() => {
+                        document.getElementById('localityInput').focus();
+                    }, 50);
+                "
+                class="w-48 px-5 bg-test-6 h-full flex items-center justify-center"
+            >
+                <i class="fa-solid fa-location-dot fa-lg mr-1"></i>
+                <span>{{ $localitySearch }}</span>
+            </div>
+
+            <!-- x-on:blur="showLocalityOptions = false" -->
+            <input
+                wire:model="localitySearch"
+                id="localityInput"
+                x-show="showLocalityOptions"
+                type="text"
+                class="w-48 h-full"
+                autocomplete="off"
+                spellcheck="false"
+            />
+
+            @if($localities->count() > 0)
+            <ul
+                x-show="showLocalityOptions"
+                class="absolute z-10 w-72 rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
+                role="listbox"
+            >
+                @foreach($localities as $locality)
+                <li
+                    x-data="{ highlighted: false }"
+                    x-on:click="
+                        console.log('teeeeeeeeeest')
+                        selectedLocality = '{{ $locality->id }}';
+                        $wire.set('localitySearch', '{{ $locality->name }}');
+                        showLocalityOptions = false;
+                    "
+                    x-on:mouseenter="highlighted = true"
+                    x-on:mouseleave="highlighted = false"
+                    x-bind:class="{ 'bg-gray-200': highlighted }"
+                    class="relative cursor-default select-none py-2 pl-3 pr-9"
+                    role="option"
+                    tabindex="-1"
+                >
+                    <span class="truncate">{{ $locality->name }}</span>
+                </li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
     </div>
 
-    <input
-        wire:model="localitySearch"
-        id="localityInput"
-        x-show="showLocalityOptions"
-        x-on:blur="showLocalityOptions = false"
-        type="text"
-        class="w-48"
-        autocomplete="off"
-        spellcheck="false"
-    />
-
+    <!-- SELECT CRAFT -->
     <div class="bg-test-1 grow h-full">
         <div class="relative h-full" @click.away="showCraftOptions = false">
             <input
@@ -97,32 +132,5 @@
     <button class="bg-blue-600 px-4 text-white h-full" type="submit">
         <i class="fa-solid fa-magnifying-glass fa-lg"></i>
     </button>
-
-    @if($localities->count() > 0)
-    <ul
-        x-show="showLocalityOptions"
-        class="absolute z-10 mt-12 w-72 rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm"
-        role="listbox"
-    >
-        @foreach($localities as $locality)
-        <li
-            x-data="{ highlighted: false }"
-            x-on:click="
-                selectedLocality = '{{ $locality->id }}';
-                $wire.set('localitySearch', '{{ $locality->name }}');
-                showLocalityOptions = false;
-            "
-            x-on:mouseenter="highlighted = true"
-            x-on:mouseleave="highlighted = false"
-            x-bind:class="{ 'bg-gray-200': highlighted }"
-            class="relative cursor-default select-none py-2 pl-3 pr-9"
-            role="option"
-            tabindex="-1"
-        >
-            <span class="truncate">{{ $locality->name }}</span>
-        </li>
-        @endforeach
-    </ul>
-    @endif
 </div>
 </form>
