@@ -11,6 +11,22 @@ class Search extends Component
     public $localitySearch = '';
     public $craftSearch = '';
 
+    public function mount()
+    {
+        $craftId = request()->query('craft');
+        $localityId = request()->query('locality');
+
+        if ($craftId) {
+            $craft = Craft::find($craftId);
+            $this->craftSearch = $craft ? $craft->name : '';
+        }
+
+        if ($localityId) {
+            $locality = Locality::find($localityId);
+            $this->localitySearch = $locality ? $locality->name : '';
+        }
+    }
+
     public function render()
     {
         $crafts = collect(); // create an empty collection
